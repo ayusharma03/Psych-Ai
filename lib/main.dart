@@ -1,8 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:psych_ai/login_page.dart';
 import 'package:psych_ai/pages/main_nav_page.dart';
+import 'package:psych_ai/theme/theme.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -26,26 +27,10 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       title: 'Psych.AI',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color.fromRGBO(206, 33, 255, 1),
-        brightness: Brightness.light,
-        indicatorColor: Colors.grey[100],
-        selectedRowColor: const Color.fromRGBO(206, 33, 255, 1),
-        highlightColor: const Color.fromRGBO(206, 33, 255, 1),
-        textTheme: GoogleFonts.balooDa2TextTheme(
-          Theme.of(context).textTheme,
-        ),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: const Color.fromRGBO(206, 33, 255, 1),
-        indicatorColor: const Color.fromRGBO(206, 33, 255, 1),
-        selectedRowColor: Colors.white,
-        highlightColor: const Color.fromRGBO(206, 33, 255, 1),
-      ),
-      themeMode: ThemeMode.dark,
-      home: const MainPage(),
+      theme: PTheme.lightTheme,
+      darkTheme: PTheme.darkTheme,
+      themeMode: ThemeMode.light,
+      home: LoginPage(),
     );
   }
 }

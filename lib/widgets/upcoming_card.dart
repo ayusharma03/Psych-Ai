@@ -44,12 +44,12 @@ class _UpcomingCardState extends State<UpcomingCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Psych.AI",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onPrimary,
+                  color: Colors.white,
                 ),
               ),
               // const SizedBox(height: 5),
