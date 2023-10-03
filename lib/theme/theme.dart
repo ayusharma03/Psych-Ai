@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PTheme {
   static ThemeData lightTheme = ThemeData(
@@ -7,6 +6,7 @@ class PTheme {
     brightness: Brightness.light,
     primaryColorLight: Colors.white,
     indicatorColor: Colors.grey[100],
+    // ignore: deprecated_member_use
     selectedRowColor: const Color.fromRGBO(206, 33, 255, 1),
     highlightColor: const Color.fromRGBO(206, 33, 255, 1),
     shadowColor: Colors.black,
@@ -18,9 +18,10 @@ class PTheme {
     brightness: Brightness.dark,
     primaryColor: const Color.fromRGBO(206, 33, 255, 1),
     indicatorColor: const Color.fromRGBO(206, 33, 255, 1),
+    // ignore: deprecated_member_use
     selectedRowColor: Colors.white,
     shadowColor: Colors.white,
-    primaryColorDark: Color.fromRGBO(32, 28, 28, 1),
+    primaryColorDark: const Color.fromRGBO(32, 28, 28, 1),
     highlightColor: const Color.fromRGBO(206, 33, 255, 1),
     fontFamily: 'Baloo Da',
     useMaterial3: true,

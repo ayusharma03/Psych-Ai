@@ -22,6 +22,7 @@ class MonthlySummary extends StatelessWidget {
         datasets: datasets,
         colorMode: ColorMode.color,
         defaultColor: Theme.of(context).indicatorColor,
+        // ignore: deprecated_member_use
         textColor: Theme.of(context).selectedRowColor.withOpacity(1),
         showColorTip: false,
         showText: true,
