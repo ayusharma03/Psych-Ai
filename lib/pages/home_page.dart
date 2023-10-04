@@ -1,4 +1,4 @@
-import 'package:psych_ai/widgets/nearby_doctors.dart';
+import 'package:psych_ai/widgets/recommended_psychologists.dart';
 import 'package:psych_ai/widgets/upcoming_card.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(14),

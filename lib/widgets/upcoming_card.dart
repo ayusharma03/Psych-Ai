@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:psych_ai/pages/chatbot_page.dart';
+import 'package:psych_ai/pages/chat_screen.dart';
 
 class UpcomingCard extends StatefulWidget {
   const UpcomingCard({super.key});
@@ -12,7 +12,7 @@ class UpcomingCard extends StatefulWidget {
 class _UpcomingCardState extends State<UpcomingCard> {
   void clikie() {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const ChatBot()),
+      MaterialPageRoute(builder: (context) => const ChatScreen()),
     );
   }
 
@@ -24,7 +24,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
       padding:
           const EdgeInsets.symmetric(vertical: 22).copyWith(left: 5, right: 20),
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(206, 33, 255, 1),
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -56,7 +56,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
               Text(
                 "Your mental health assistant",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: Colors.white70,
+                      color: Colors.white,
                     ),
               ),
               const SizedBox(height: 4),
@@ -64,7 +64,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ChatBot()),
+                    MaterialPageRoute(builder: (context) => const ChatScreen()),
                   );
                 },
                 icon: const Icon(
@@ -75,7 +75,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14)),
                   foregroundColor: Colors.white,
-                  backgroundColor: const Color.fromRGBO(206, 33, 255, 1),
+                  backgroundColor: Theme.of(context).primaryColor,
                   side: const BorderSide(color: Colors.white, width: 2),
                   fixedSize: const Size(200, 10),
                 ),

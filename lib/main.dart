@@ -1,36 +1,35 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:psych_ai/login_page.dart';
+import 'package:psych_ai/pages/login_page.dart';
 import 'package:psych_ai/pages/main_nav_page.dart';
 import 'package:psych_ai/theme/theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'bot/providers/active_theme_provider.dart';
+import 'pages/chat_screen.dart';
 
 void main() async {
   await Hive.initFlutter();
 
   // open a box
   await Hive.openBox("Habit_Database");
-  runApp(DevicePreview(
-    enabled: false,
-    builder: (context) => const MyApp(),
-  ));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final activeTheme = ref.watch(activeThemeProvider);
     return MaterialApp(
-      builder: DevicePreview.appBuilder,
-      locale: DevicePreview.locale(context),
       title: 'Psych.AI',
       debugShowCheckedModeBanner: false,
       theme: PTheme.lightTheme,
       darkTheme: PTheme.darkTheme,
-      themeMode: ThemeMode.dark,
-      home: MainPage(),
+      themeMode: activeTheme == Themes.dark ? ThemeMode.dark : ThemeMode.light,
+      home: const MainPage(),
     );
   }
 }

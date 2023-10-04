@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:psych_ai/pages/chatbot_page.dart';
+import 'package:psych_ai/pages/chat_screen.dart';
 import 'package:psych_ai/pages/habit_tracker.dart';
 import 'package:psych_ai/pages/home_page.dart';
 import 'package:psych_ai/pages/profile_page.dart';
+
+import '../widgets/my_app_bar.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -15,10 +17,11 @@ class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
   List pages = [
     const HomePage(),
-    const ChatBot(),
+    const ChatScreen(),
     const HabitTracker(),
-    const ProfilePage(),
+    ProfilePage(),
   ];
+  void signUserOut() {}
   void onTap(int index) {
     setState(() {
       currentIndex = index;
@@ -29,7 +32,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     String userName = "Krishna";
     return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.background,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,24 +46,27 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
           actions: [
+            const toggle(),
             IconButton(
               onPressed: () {},
               icon: const Icon(Ionicons.notifications_outline),
             ),
             IconButton(
-              onPressed: () {},
-              icon: const Icon(Ionicons.search_outline),
+              onPressed: signUserOut,
+              icon: const Icon(Ionicons.log_out_outline),
             ),
           ],
         ),
         body: pages[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Theme.of(context).colorScheme.background,
           onTap: onTap,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: false,
           showSelectedLabels: true,
           selectedItemColor: Theme.of(context).highlightColor,
+          unselectedItemColor: Theme.of(context).colorScheme.onBackground,
           items: const [
             // home
             BottomNavigationBarItem(

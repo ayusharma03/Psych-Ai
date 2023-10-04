@@ -1,4 +1,4 @@
-import 'package:psych_ai/data/doctor_model.dart';
+import 'package:psych_ai/data/psychologist_model.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 

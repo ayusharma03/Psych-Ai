@@ -120,6 +120,7 @@ class _HabitTrackerState extends State<HabitTracker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       floatingActionButton: FloatingActionButton.extended(
         label: const Text("Add"),
         backgroundColor: Colors.purple[700],
