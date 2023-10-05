@@ -91,7 +91,8 @@ class OpenAIService {
     });
     try {
       http.Response res = await http.get(
-        Uri.parse('http://127.0.0.1:8081/chat?query=$prompt'),
+        Uri.parse(
+            'https://diagnosis-bot-qmtgyp5hbq-em.a.run.app/chat?query=$prompt'),
       );
       String content = res.body.toString();
       content = content.trim();
