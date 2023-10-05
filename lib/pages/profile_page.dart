@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     @override
-    Color colorText = Theme.of(context).shadowColor;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
@@ -25,8 +25,8 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  width: 360,
-                  height: 150,
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 10).copyWith(top: 20),
                   padding: const EdgeInsets.symmetric(vertical: 22)
                       .copyWith(left: 5, right: 20),
                   decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
@@ -71,7 +71,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                           ),
                           // const SizedBox(height: 5),
                           Text(
-                            "I like Kids. (Certified PDF File)",
+                            "Aspiring Developer",
                             style:
                                 Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color: Colors.white,
@@ -112,10 +112,11 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                 const SizedBox(height: 5),
                 buttton(() {}, context, "About Us"),
 
-                const SizedBox(
-                  height: 200,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 100),
+                SizedBox(
+                  height: 150,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.only(left: w / 3),
                     child: Toggle(),
                   ),
                 ),

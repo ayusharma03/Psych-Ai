@@ -1,12 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:psych_ai/pages/login_page.dart';
 import 'package:psych_ai/pages/main_nav_page.dart';
 import 'package:psych_ai/theme/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'bot/providers/active_theme_provider.dart';
-import 'pages/chat_screen.dart';
 
 void main() async {
   await Hive.initFlutter();

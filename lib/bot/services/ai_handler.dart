@@ -1,15 +1,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:psych_ai/bot/services/openai_service.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AIHandler {
+  String lastWords = '';
+  final OpenAIService openAIService = OpenAIService();
+  String? generatedContent;
   Future<String> getResponse(String message) async {
-    String apiUrl =
-        'http://127.0.0.1:8081/chat?query=${message.removeAllWhiteSpace()}';
-    print(apiUrl);
     try {
-      final response = await http.get(Uri.parse(apiUrl));
-      String res = jsonDecode(response.body)['response'];
+      Future<String> res = openAIService.isArtPromptAPI(message);
+      print(res);
       return res;
     } catch (e) {
       return e.toString();
