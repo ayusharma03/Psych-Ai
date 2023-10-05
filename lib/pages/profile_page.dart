@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:psych_ai/pages/chat_screen.dart';
-import 'package:psych_ai/widgets/my_textfield.dart';
-
-import '../widgets/my_button.dart';
 import '../bot/providers/active_theme_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,8 +20,8 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  margin:
-                      EdgeInsets.symmetric(horizontal: 10).copyWith(top: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 10)
+                      .copyWith(top: 20),
                   padding: const EdgeInsets.symmetric(vertical: 22)
                       .copyWith(left: 5, right: 20),
                   decoration: BoxDecoration(
@@ -35,7 +30,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Theme.of(context).colorScheme.secondary,
-                        offset: Offset(
+                        offset: const Offset(
                           2.0,
                           2.0,
                         ),
@@ -117,7 +112,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.only(left: w / 3),
-                    child: Toggle(),
+                    child: const Toggle(),
                   ),
                 ),
               ],

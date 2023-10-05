@@ -68,24 +68,24 @@ class ProfileContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-        color: isMe
-            ? Theme.of(context).colorScheme.secondary
-            : Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.only(
-          topLeft: const Radius.circular(10),
-          topRight: const Radius.circular(10),
-          bottomLeft: Radius.circular(isMe ? 0 : 15),
-          bottomRight: Radius.circular(isMe ? 15 : 0),
-        ),
-      ),
-      child: Icon(
-        isMe ? Icons.person : Icons.computer,
-        color: isMe
-            ? Theme.of(context).colorScheme.onSecondary
-            : Theme.of(context).colorScheme.onPrimaryContainer,
+      width: 50,
+      height: 50,
+      // decoration: BoxDecoration(
+      //   color: isMe
+      //       ? Theme.of(context).colorScheme.secondary
+      //       : Theme.of(context).primaryColor,
+      //   borderRadius: BorderRadius.only(
+      //     topLeft: const Radius.circular(10),
+      //     topRight: const Radius.circular(10),
+      //     bottomLeft: Radius.circular(isMe ? 0 : 15),
+      //     bottomRight: Radius.circular(isMe ? 15 : 0),
+      //   ),
+      // ),
+      child: Image.asset(
+        isMe ? "assets/profile2.png" : "assets/bot2.png",
+        // color: isMe
+        //     ? Theme.of(context).colorScheme.onSecondary
+        //     : Theme.of(context).colorScheme.onPrimaryContainer,
       ),
     );
   }

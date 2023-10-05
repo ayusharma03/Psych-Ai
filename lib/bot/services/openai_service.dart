@@ -100,7 +100,7 @@ class OpenAIService {
       messages.add({
         'role': 'user',
         'content':
-            'The user has provided a report which has their possible diagnosis, along with their corresponding percentage chance, in the form of a dictionary, the dictionary also contains an explanation section which explains the user about their diagnosis, present the user this information in a soft and friendly manner, Do not say sorry, give diagnosis in 100 words and provide what actions they should take, the dictionary provided is: $content',
+            'The user has provided a report which has their possible diagnosis, along with their corresponding percentage in the form of a dictionary, the dictionary also contains an explanation section which explains the user about their diagnosis, present the user this information in a soft and friendly manner, give the diagnosis and provide what actions they should take, the dictionary provided is: $content',
       });
       print(content);
       return chatGPTAPI(prompt);
