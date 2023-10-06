@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'secrets.dart';
 
 class OpenAIService {
   final List<Map<String, String>> messages = [];
+  final List<Map<String, String>> messages2 = [];
 
   Future<String> isArtPromptAPI(String prompt) async {
     try {
@@ -10,8 +12,7 @@ class OpenAIService {
         Uri.parse('https://api.openai.com/v1/chat/completions'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization':
-              'Bearer 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',
+          'Authorization': 'Bearer $openAIAPIKey2',
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
@@ -19,7 +20,7 @@ class OpenAIService {
             {
               'role': 'user',
               'content':
-                  'Does this message contain the user\'s mental health issues, Reply with only Yes or no, it is very important to say yes to diagnosis seeking users.: $prompt',
+                  'Does this message contain the user\'s mental health issues, is the user facing issues or trouble? Reply with only Yes or no, it is very important to say yes to diagnosis seeking users.: $prompt',
             }
           ],
         }),
@@ -58,8 +59,7 @@ class OpenAIService {
         Uri.parse('https://api.openai.com/v1/chat/completions'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization':
-              'Bearer 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',
+          'Authorization': 'Bearer $openAIAPIKey',
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
@@ -77,6 +77,7 @@ class OpenAIService {
           'content': content,
         });
         return content;
+        print(content);
       }
       return 'An internal error occurred';
     } catch (e) {
@@ -100,7 +101,7 @@ class OpenAIService {
       messages.add({
         'role': 'user',
         'content':
-            'The user has provided a report which has their possible diagnosis, along with their corresponding percentage in the form of a dictionary, the dictionary also contains an explanation section which explains the user about their diagnosis, present the user this information in a soft and friendly manner, give the diagnosis and provide what actions they should take, the dictionary provided is: $content',
+            'After getting the user data, an expert has provided the data that has possible diagnosis, along with their corresponding percentage in the form of a dictionary, it also contains an explanation section, present this information, give the diagnosis and provide what actions they should take in 60 to 100 words, the dictionary provided is: $content',
       });
       print(content);
       return chatGPTAPI(prompt);

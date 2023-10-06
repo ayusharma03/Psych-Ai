@@ -18,6 +18,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
 
   @override
   Widget build(BuildContext context) {
+    var w = MediaQuery.of(context).size.width;
     return Container(
       width: double.maxFinite,
       height: 150,
@@ -77,7 +78,7 @@ class _UpcomingCardState extends State<UpcomingCard> {
                   foregroundColor: Colors.white,
                   backgroundColor: Theme.of(context).primaryColor,
                   side: const BorderSide(color: Colors.white, width: 2),
-                  fixedSize: const Size(200, 10),
+                  fixedSize: Size(w / 2, 10),
                 ),
               ),
             ],
