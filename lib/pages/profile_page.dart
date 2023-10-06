@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../bot/providers/active_theme_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+const name = "Ayush";
+const fullName = "Ayush Sharma";
+const bio = "Dev by Day, Gamer by Night";
+
 class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
   ProfilePage({super.key});
 
@@ -46,7 +50,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'assets/profile.png',
+                          'assets/profiles/${name}1.png',
                           height: 120,
                           fit: BoxFit.cover,
                         ),
@@ -57,7 +61,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Krishna Agarwal",
+                            fullName,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -66,7 +70,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                           ),
                           // const SizedBox(height: 5),
                           Text(
-                            "Aspiring Developer",
+                            bio,
                             style:
                                 Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color: Colors.white,
@@ -86,7 +90,7 @@ class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
                               backgroundColor: Theme.of(context).primaryColor,
                               side: const BorderSide(
                                   color: Colors.white, width: 2),
-                              fixedSize: const Size(200, 10),
+                              fixedSize: Size(w / 2, 10),
                             ),
                           ),
                         ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const name = "Ayush";
+
 class ChatItem extends StatelessWidget {
   final String text;
   final bool isMe;
@@ -82,7 +84,7 @@ class ProfileContainer extends StatelessWidget {
       //   ),
       // ),
       child: Image.asset(
-        isMe ? "assets/profile2.png" : "assets/bot2.png",
+        isMe ? "assets/profiles/${name}2.png" : "assets/bot2.png",
         // color: isMe
         //     ? Theme.of(context).colorScheme.onSecondary
         //     : Theme.of(context).colorScheme.onPrimaryContainer,
