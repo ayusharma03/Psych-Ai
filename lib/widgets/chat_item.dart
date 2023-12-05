@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const name = "Ayush";
+const name = "Rohit";
 
 class ChatItem extends StatelessWidget {
   final String text;

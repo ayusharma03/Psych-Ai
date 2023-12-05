@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../bot/providers/active_theme_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-const name = "Ayush";
-const fullName = "Ayush Sharma";
-const bio = "Dev by Day, Gamer by Night";
+const name = "Rohit";
+const fullName = "Rohit Kushwaha";
+const bio = "Certified Nerd.";
 
 class ProfilePage extends StatelessWidget implements PreferredSizeWidget {
   ProfilePage({super.key});
