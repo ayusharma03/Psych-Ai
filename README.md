@@ -30,7 +30,7 @@
 
 ## 🚀 Key Benefits
 
-- **Accessible to All**: Built to ensure accessibility regardless of users' location or background.
+- **Accessible to All**: Built to ensure accessibility regardless of users' position or background.
 - **Data-Driven**: Uses NLP models like the Universal Sentence Encoder (USE) to provide accurate assessments.
 - **Research-Oriented**: A database for psychologists to study and collect mental health data for further research.
 
